@@ -10,7 +10,7 @@ function formatQuestionText(question) {
     const randomQuestionObj = data[Math.floor(Math.random() * data.length)];
     const randomQuestion = `${randomQuestionObj.question}`;
     formatQuestionText(randomQuestion);
-    questionElement.setAttribute("answer", randomQuestionObj.answers);
+    questionElement.setAttribute("FDanswer", randomQuestionObj.answers);
   });
   
   let NQB;
@@ -28,7 +28,7 @@ function formatQuestionText(question) {
     const userAnswer = document.getElementById("ans").value.toLowerCase();
     const currentQuestionElement = document.getElementById("question");
     const correctAnswer = currentQuestionElement
-      .getAttribute("answer")
+      .getAttribute("FDanswer")
       .toLowerCase();
   
     const normaliseAnswer = (answer) => {
@@ -83,7 +83,7 @@ function formatQuestionText(question) {
         const randomQuestionObj = data[Math.floor(Math.random() * data.length)];
         const randomQuestion = `${randomQuestionObj.question}`;
         formatQuestionText(randomQuestion);
-        questionElement.setAttribute("answer", randomQuestionObj.answers);
+        questionElement.setAttribute("FDanswer", randomQuestionObj.answers);
       });
   }
   
@@ -112,7 +112,7 @@ function formatQuestionText(question) {
   function skipQuestion() {
     showNQ();
     const questionElement = document.getElementById("question");
-    const questionAnswer = questionElement.getAttribute("answer");
+    const questionAnswer = questionElement.getAttribute("FDanswer");
     showAlert(`Correct answer was: ${questionAnswer}`);
     updateSkippedCount();
   }
@@ -151,20 +151,20 @@ function formatQuestionText(question) {
   
   function updateAnswerCounters(message) {
     const answerCountElement = document.getElementById("answerCount");
-    let userAnswers = JSON.parse(localStorage.getItem("userAnswers")) || {
+    let FDuserAnswers = JSON.parse(localStorage.getItem("FDuserAnswers")) || {
       correct: 0,
       incorrect: 0,
       skipped: 0,
     };
     if (message === "Correct!") {
-      userAnswers.correct++;
+      FDuserAnswers.correct++;
     } else if (message === "Skipped") {
-      userAnswers.skipped++;
+      FDuserAnswers.skipped++;
     } else {
-      userAnswers.incorrect++;
+      FDuserAnswers.incorrect++;
     }
     const totalAnswerCount =
-      userAnswers.correct + userAnswers.incorrect + userAnswers.skipped;
-    answerCountElement.textContent = `${userAnswers.correct} correct, ${userAnswers.incorrect} wrong and ${userAnswers.skipped} skipped (${totalAnswerCount} total)`;
-    localStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+      FDuserAnswers.correct + FDuserAnswers.incorrect + FDuserAnswers.skipped;
+    answerCountElement.textContent = `${FDuserAnswers.correct} correct, ${FDuserAnswers.incorrect} wrong and ${FDuserAnswers.skipped} skipped (${totalAnswerCount} total)`;
+    localStorage.setItem("FDuserAnswers", JSON.stringify(FDuserAnswers));
   }
