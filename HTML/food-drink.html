@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Knowledge Quiz</title>
+    <link rel="stylesheet" href="../CSS/food-drink.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="preventSelect" id="head">
+        <h1>Food and Drink</h1>
+      </div>
+      <div id="panel">
+        <div id="answerCount"></div>
+        <h3 id="question"></h3>
+        <section>
+          <input class="preventSelect" onpaste="return false;" id="ans" placeholder="Answer..." />
+        </section>
+        <button class="preventSelect" id="submitBtn" onclick="verifyAnswer()">Submit</button>
+        <button class="skipBtn preventSelect" id="skipbtn" onclick="skipQuestion()">Skip</button>
+      </div>
+    </div>
+    <script src="./JS/food-drink.js"></script>
+  </body>
+</html>
