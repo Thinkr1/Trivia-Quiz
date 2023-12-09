@@ -72,18 +72,18 @@ function formatQuestionText(question) {
   }
   
   function showNQ() {
-    answered = false;
     tryCount = 0;
+    answered = false;
     document.getElementById("ans").disabled = false;
     document.getElementById("ans").value = "";
-    fetch("./questions.json")
+    fetch("../JSON/arts-lit.json")
       .then((response) => response.json())
       .then((data) => {
         const questionElement = document.getElementById("question");
         const randomQuestionObj = data[Math.floor(Math.random() * data.length)];
-        const randomQuestion = `${randomQuestionObj.category}: ${randomQuestionObj.question}`;
-        questionElement.textContent = randomQuestion;
-        questionElement.setAttribute("answer", randomQuestionObj.answer);
+        const randomQuestion = `${randomQuestionObj.question}`;
+        formatQuestionText(randomQuestion);
+        questionElement.setAttribute("answer", randomQuestionObj.answers);
       });
   }
   
