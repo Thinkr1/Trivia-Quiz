@@ -76,7 +76,7 @@ function formatQuestionText(question) {
     answered = false;
     document.getElementById("ans").disabled = false;
     document.getElementById("ans").value = "";
-    fetch("../JSON/arts-lit.json")
+    fetch("../JSON/sci-nat.json")
       .then((response) => response.json())
       .then((data) => {
         const questionElement = document.getElementById("question");
