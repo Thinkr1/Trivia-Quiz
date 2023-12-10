@@ -24,14 +24,14 @@ h1 {
   width: 100%;
   padding-top: 70px;
   padding-bottom: 70px;
-  background-color: #355E8C; /*#355E8C*/
+  background-color: #355e8c; /*#355E8C*/
 }
 
 #panel {
   width: 50%;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 3px 3px 5px rgba(128, 128, 128, .2);
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.2);
   position: relative;
   top: -30px;
   background-color: #222222; /*#222222*/
@@ -69,7 +69,7 @@ section {
   width: 300px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 3px 3px 5px rgba(128, 128, 128, .2);
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.2);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -102,7 +102,7 @@ button {
 }
 
 #nextQuestion {
-  background-color: #E65454; /*#E65454*/
+  background-color: #e65454; /*#E65454*/
 }
 
 #answerCount {
@@ -159,5 +159,5 @@ input {
 }
 
 a {
-  color:#4d8cd7;
+  color: #4d8cd7;
 }
