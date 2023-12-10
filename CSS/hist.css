@@ -144,6 +144,10 @@ button {
   -ms-user-select: text;
 }
 
+input {
+  color: #eee;
+}
+
 @media (max-width: 1200px) {
   .skipBtn {
     display: flex;
