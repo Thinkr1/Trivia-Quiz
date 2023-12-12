@@ -35,7 +35,7 @@ function verifyAnswer() {
     return answer.replace(/^(a |an| the )/g, "").trim();
   };
 
-  if (normaliseAnswer(userAnswer) === normaliseAnswer(correctAnswer)) {
+  if (correctAnswer.split(',').map(answer => answer.trim().toLowerCase()).includes(normaliseAnswer(userAnswer))) {
     console.log("Correct!");
     showAlert("Correct!");
     NQB = createNQB();
@@ -49,7 +49,7 @@ function verifyAnswer() {
       showAlert(`Incorrect! Try again. Tries left: ${3 - tryCount}`);
     } else {
       console.log("Incorrect! Showing correct answer.");
-      showAlert(`Incorrect! The correct answer is: ${correctAnswer}.`);
+      showAlert(`Incorrect! The correct answer is: ${correctAnswer.join(', ')}.`);
       NQB = createNQB();
       NQB.style.backgroundColor = "#B53F3F"; // reddish
       answered = true;

@@ -35,7 +35,7 @@ function verifyAnswer() {
     return answer.replace(/^(a |an| the )/g, "").trim();
   };
 
-  if (normaliseAnswer(userAnswer) === normaliseAnswer(correctAnswer)) {
+  if (correctAnswers.split(',').map(answer => answer.trim().toLowerCase()).includes(normaliseAnswer(userAnswer))) {
     console.log("Correct!");
     showAlert("Correct!");
     NQB = createNQB();
